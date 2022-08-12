@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
-  get '/users/:id', to: 'users#show'
-  post '/users/', to: 'users#create'
-
+    namespace :api do
+        namespace :vi do 
+            resources :validation_codes, only: [:create] 
+        end
+    end
 end
